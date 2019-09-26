@@ -74,19 +74,19 @@
 
 		Nav_Menu: function ($scope) {
 			var menu_container = $scope.find('.elementskit-menu-container');
-			if(menu_container.attr('ekit-dom-added') == 'yes'){
+			if (menu_container.attr('ekit-dom-added') == 'yes') {
 				return;
 			}
 			menu_container
-			.before(
-				'<button class="elementskit-menu-hamburger elementskit-menu-toggler">'
-				+ '<span class="elementskit-menu-hamburger-icon"></span>'
-				+ '<span class="elementskit-menu-hamburger-icon"></span>'
-				+ '<span class="elementskit-menu-hamburger-icon"></span>'
-				+ '</button>'
-			)
-			.after('<div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler"></div>')
-			.attr('ekit-dom-added', 'yes');
+				.before(
+					'<button class="elementskit-menu-hamburger elementskit-menu-toggler">' +
+					'<span class="elementskit-menu-hamburger-icon"></span>' +
+					'<span class="elementskit-menu-hamburger-icon"></span>' +
+					'<span class="elementskit-menu-hamburger-icon"></span>' +
+					'</button>'
+				)
+				.after('<div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler"></div>')
+				.attr('ekit-dom-added', 'yes');
 		},
 		Progressbar: function ($scope) {
 			var barElement = $scope.find(".single-skill-bar");
@@ -618,7 +618,7 @@
 					var content = $this.innerHTML;
 					content = content.trim();
 					var str = '';
-					var delay = parseInt(text.attr('ekit-animation-delay')),
+					var delay = parseInt(text.attr('data-ekit-animation-delay')),
 						delayIncrement = delay;
 
 					//console.log(delay);
@@ -659,7 +659,7 @@
 
 		PostTab: function ($scope) {
 			var tab = $scope.find('.post--tab');
-			
+
 			if (tab.length < 1) {
 				return;
 			}
@@ -720,7 +720,7 @@
 					info: settings.info
 				}
 
-				if(settings.entries === false) {
+				if (settings.entries === false) {
 					tableConfig.dom = 'Bfrtip';
 				}
 
@@ -787,23 +787,23 @@
 			}).animate({
 				value: stop
 			}, {
-					duration: duration == undefined ? 500 : duration,
-					easing: ease == undefined ? "swing" : ease,
-					step: function () {
-						$this.text(Math.floor(this.value));
+				duration: duration == undefined ? 500 : duration,
+				easing: ease == undefined ? "swing" : ease,
+				step: function () {
+					$this.text(Math.floor(this.value));
+					if (commas) {
+						$this.text($this.text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+					}
+				},
+				complete: function () {
+					if (parseInt($this.text(), 10) !== stop) {
+						$this.text(stop);
 						if (commas) {
 							$this.text($this.text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
 						}
-					},
-					complete: function () {
-						if (parseInt($this.text(), 10) !== stop) {
-							$this.text(stop);
-							if (commas) {
-								$this.text($this.text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
-							}
-						}
 					}
-				});
+				}
+			});
 		});
 	};
 

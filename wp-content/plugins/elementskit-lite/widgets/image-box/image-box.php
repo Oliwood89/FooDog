@@ -834,6 +834,18 @@ class Elementskit_Widget_Image_Box extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+			'ekit_image_box_border_radius',
+			[
+				'label' => __( 'Border radius', 'elementskit' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .elementskit-box-header' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
         $this->start_controls_tabs(
             'ekit_image_box_style_tabs_image'
         );
@@ -1008,30 +1020,24 @@ class Elementskit_Widget_Image_Box extends Widget_Base {
 
         $this->add_responsive_control(
             'ekit_image_box_title_bottom_space',
-            [
+			[
                 'label' => esc_html__( 'Spacing', 'elementskit' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
-                'range' => [
-                    'px' => [
-                        'min' => -100,
-                        'max' => 100,
-                        'step' => 1,
-                    ],
-                    '%' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'default' => [
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+                'default' => [  
+                    'top' => '0',
+                    'right' => '0',
+                    'bottom' => '20',
+                    'left' => '0',
                     'unit' => 'px',
-                    'size' => 20,
+                    'isLinked' => 'true',
                 ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementskit-info-image-box .elementskit-info-box-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
+				'selectors' => [
+					'{{WRAPPER}} .elementskit-info-image-box .elementskit-info-box-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+
 
         $this->add_responsive_control(
             'ekit_image_box_heading_color',
@@ -1097,30 +1103,23 @@ class Elementskit_Widget_Image_Box extends Widget_Base {
 
         $this->add_responsive_control(
             'ekit_image_box_title_bottom_space_description',
-            [
+			[
                 'label' => esc_html__( 'Spacing', 'elementskit' ),
-                'type' => Controls_Manager::SLIDER,
-                'size_units' => [ 'px', '%' ],
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 1000,
-                        'step' => 1,
-                    ],
-                    '%' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
-                ],
-                'default' => [
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', '%', 'em' ],
+                'default' => [  
+                    'top' => '0',
+                    'right' => '0',
+                    'bottom' => '14',
+                    'left' => '0',
                     'unit' => 'px',
-                    'size' => 14,
+                    'isLinked' => 'true',
                 ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementskit-info-image-box .elementskit-box-style-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
+				'selectors' => [
+					'{{WRAPPER}} .elementskit-info-image-box .elementskit-box-style-content' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 
         $this->add_responsive_control(
             'ekit_image_box_heading_color_description',
@@ -1444,11 +1443,13 @@ class Elementskit_Widget_Image_Box extends Widget_Base {
 
                         endif;
                     ?>
+                    <?php if ($settings['ekit_image_box_description_text'] != '') { ?>
                     <div class="elementskit-box-style-content">
                         <?php
                         echo wp_kses_post($settings['ekit_image_box_description_text']);
                         ?>
                     </div>
+                    <?php }; ?>
                 </div>
 
                 <?php if($settings['ekit_image_box_enable_btn'] == 'yes') :  ?>

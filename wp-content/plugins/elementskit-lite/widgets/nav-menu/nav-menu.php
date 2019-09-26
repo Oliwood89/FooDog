@@ -50,6 +50,17 @@ class Elementskit_Widget_Nav_Menu extends Widget_Base {
                 'label' => esc_html__('Menu settings', 'elementskit'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
+		);
+		
+		$this->add_control(
+            'elementskit_one_page_enable',
+            [
+                'label' => esc_html__('Enable one page? ', 'elementskit'),
+                'type' => Controls_Manager::SWITCHER,
+                'default' => 'no',
+                'label_on' =>esc_html__( 'Yes', 'elementskit' ),
+                'label_off' =>esc_html__( 'No', 'elementskit' ),
+            ]
         );
 
 
@@ -1242,7 +1253,7 @@ class Elementskit_Widget_Nav_Menu extends Widget_Base {
 				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>' . $markup,
 				'container'       => 'div',
 				'container_id'    => 'ekit-megamenu-' . $settings['elementskit_nav_menu'],
-				'container_class' => 'elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default ' . $settings['elementskit_style_tab_submenu_item_arrow'],
+				'container_class' => 'elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default ' . $settings['elementskit_style_tab_submenu_item_arrow'] . ' ekit-nav-menu-one-page-' . $settings['elementskit_one_page_enable'],
 				'menu_id'         => 'main-menu',
 				'menu'         	  => $settings['elementskit_nav_menu'],
 				'menu_class'      => 'elementskit-navbar-nav ' . $settings['elementskit_main_menu_position'],

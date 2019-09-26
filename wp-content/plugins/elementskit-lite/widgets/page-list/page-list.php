@@ -140,6 +140,21 @@ class Elementskit_Widget_Page_List extends Widget_Base {
 		);
 
 		$repeater->add_responsive_control(
+			'icon_color',
+			[
+				'label' => esc_html__( 'Color', 'elementskit' ),
+				'type' => Controls_Manager::COLOR,
+				'default' => '',
+				'selectors' => [
+					'{{WRAPPER}} {{CURRENT_ITEM}} .elementor-icon-list-icon i' => 'color: {{VALUE}};',
+				],
+				'condition' => [
+					'ekit_page_list_show_icon' => 'yes'
+				],
+			]
+		);
+
+		$repeater->add_responsive_control(
 			'ekit_menu_list_icon_vetical_align',
 			[
 				'label' => __( 'Vertical Alignment', 'elementskit' ),
@@ -171,13 +186,46 @@ class Elementskit_Widget_Page_List extends Widget_Base {
 		);
 
 		$repeater->add_control(
+			'ekit_page_list_select_page_or_custom_link',
+			[
+				'label' => __( 'Selct Page / Custom Link', 'elementskit' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => __( 'Show', 'your-plugin' ),
+				'label_off' => __( 'Hide', 'your-plugin' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+		$repeater->add_control(
 			'link',
 			[
                 'label' =>esc_html__('Select Page', 'elementskit'),
 				'type'      => ElementsKit_Controls_Manager::AJAXSELECT2,
 				'options'   =>'ajaxselect2/page_list',
                 'label_block' => true,
-                'multiple'  => false,
+				'multiple'  => false,
+				'condition' => [
+					'ekit_page_list_select_page_or_custom_link' => 'yes'
+				]
+			]
+		);
+
+		$repeater->add_control(
+			'ekit_page_list_website_link',
+			[
+				'label' => __( 'Link', 'elementskit' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => __( 'https://your-link.com', 'elementskit' ),
+				'show_external' => true,
+				'default' => [
+					'url' => '',
+					'is_external' => true,
+					'nofollow' => true,
+				],
+				'condition' => [
+					'ekit_page_list_select_page_or_custom_link!' => 'yes'
+				]
 			]
 		);
 
@@ -601,23 +649,17 @@ class Elementskit_Widget_Page_List extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
-
-		$this->add_control(
-			'icon_color',
+		$this->add_responsive_control(
+			'icon_color_hover',
 			[
-				'label' => esc_html__( 'Color', 'elementskit' ),
+				'label' => esc_html__( 'Hover', 'elementskit' ),
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-icon i' => 'color: {{VALUE}};',
-				],
-				'scheme' => [
-					'type' => Scheme_Color::get_type(),
-					'value' => Scheme_Color::COLOR_1,
+					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
-
 		$this->add_responsive_control(
 			'ekit_icon_margin',
 			[
@@ -626,18 +668,6 @@ class Elementskit_Widget_Page_List extends Widget_Base {
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-list-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
-		);
-
-		$this->add_control(
-			'icon_color_hover',
-			[
-				'label' => esc_html__( 'Hover', 'elementskit' ),
-				'type' => Controls_Manager::COLOR,
-				'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .elementor-icon-list-item:hover .elementor-icon-list-icon i' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -822,12 +852,39 @@ class Elementskit_Widget_Page_List extends Widget_Base {
 		<div <?php echo \ElementsKit\Utils::render($this->get_render_attribute_string( 'icon_list' )); ?>>
 			<?php
 			foreach ( $settings['icon_list'] as $index => $item ) :
-				$post = !empty( $item['link'] ) ? get_post($item['link']) : 0;
+				$post = '';
+				if ($item['ekit_page_list_select_page_or_custom_link'] == 'yes') {
+					$post = !empty( $item['link'] ) ? get_post($item['link']) : 0;
+				} else {
+					$post = $item['ekit_page_list_website_link']['url'];
+				}
+
+				$href = '';
+				if ($item['ekit_page_list_select_page_or_custom_link'] == 'yes') {
+					$href = get_the_permalink($post->ID);
+				} else {
+					$href = $post;
+				}
+
+				$target = '';
+				if ($item['ekit_page_list_select_page_or_custom_link'] == 'yes') {
+					$target = '_blank' === $settings['ekit_href_target'] ? ' target=_blank' : '';
+				} else {
+					$target = $item['ekit_page_list_website_link']['is_external'] ? ' target=_blank' : '';
+				}
+				
+				$rel = '';
+				if ($item['ekit_page_list_select_page_or_custom_link'] == 'yes') {
+					$rel = $settings['ekit_href_rel'] == 'yes' ? 'nofollow' : '';
+				} else {
+					$rel = $item['ekit_page_list_website_link']['nofollow'] ? 'nofollow' : '';
+				}
+
                 if($post != null):
 					$text = empty($item['text']) ? $post->post_title : $item['text'];
 				?>
 				<div class="elementor-icon-list-item" >
-					<a <?php echo '_blank' === $settings['ekit_href_target'] ? 'target="_blank"' : ''; ?> rel="<?php echo esc_attr($settings['ekit_href_rel'] == 'yes' ? 'nofollow' : '') ?>" href="<?php echo esc_url(get_the_permalink($post->ID)); ?>" class="elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?> <?php echo \ElementsKit\Utils::render($item['ekit_menu_list_label_align'])?>">
+					<a <?php echo esc_attr($target); ?> rel="<?php echo esc_attr($rel);?>"  href="<?php echo esc_url($href); ?>" class="elementor-repeater-item-<?php echo esc_attr( $item[ '_id' ] ); ?> <?php echo \ElementsKit\Utils::render($item['ekit_menu_list_label_align'])?>">
 						<div class="ekit_page_list_content">
 							<?php if ( ! empty( $item['icon'] ) && $item['ekit_page_list_show_icon'] == 'yes') : ?>
 								<span class="elementor-icon-list-icon">

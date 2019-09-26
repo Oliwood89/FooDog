@@ -531,6 +531,15 @@ class Elementskit_Widget_Mail_Chimp extends Widget_Base {
 		);
 
 		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'ekit_mail_chimp_input_typography',
+				'label' => esc_html__( 'Typography', 'elementskit' ),
+				'selector' => '{{WRAPPER}} .ekit_form_control',
+			]
+		);
+
+		$this->add_group_control(
 			Group_Control_Background::get_type(),
 			[
 				'name' => 'ekit_mail_chimp_input_style_background',
@@ -569,7 +578,7 @@ class Elementskit_Widget_Mail_Chimp extends Widget_Base {
 			[
 				'name' => 'ekit_mail_chimp_input_style_box_shadow',
 				'label' => esc_html__( 'Box Shadow', 'elementskit' ),
-				'selector' => '{{WRAPPER}} .ekit_form_control',
+				'selector' => '{{WRAPPER}} .ekit_form_control, {{WRAPPER}} .ekit_form_control:focus',
 			]
 		);
 

@@ -47,30 +47,30 @@ With Elementskit we have Layout library features where over 7+ ready-made home a
 
 == 35+ FREE WIDGETS AND COUNTING ==
 
-- <a href="https://elementskit.xpeedstudio.com/accordion/">Accordion</a>
-- <a href="https://elementskit.xpeedstudio.com/tab/">Tab</a>
-- <a href="https://elementskit.xpeedstudio.com/team/">Team</a>
-- <a href="https://elementskit.xpeedstudio.com/social-media/">Social Media</a>
-- <a href="https://elementskit.xpeedstudio.com/blog/">Recent Blog</a>
-- <a href="https://elementskit.xpeedstudio.com/client-logo/">Client and sponsor logo</a>
-- <a href="https://elementskit.xpeedstudio.com/countdown-timer/">Countdown Timer</a>
-- <a href="https://elementskit.xpeedstudio.com/faq/">FAQ</a>
-- <a href="https://elementskit.xpeedstudio.com/funfact/">FunFact</a>
-- <a href="https://elementskit.xpeedstudio.com/heading/">Heading</a>
-- <a href="https://elementskit.xpeedstudio.com/icon-box/">Icon box</a>
-- <a href="https://elementskit.xpeedstudio.com/image-accordion/">Image Accordions</a>
-- <a href="https://elementskit.xpeedstudio.com/image-box/">Image Box</a>
-- <a href="https://elementskit.xpeedstudio.com/pie-chart/">Piechart</a>
-- <a href="https://elementskit.xpeedstudio.com/pricing-new/">Pricing</a>
-- <a href="https://elementskit.xpeedstudio.com/progress-bar/">Progress bar</a>
-- <a href="https://elementskit.xpeedstudio.com/testimonial/">Testimonial</a>
-- <a href="https://elementskit.xpeedstudio.com/mail-chimp/">MailChimp</a>
-- <a href="https://elementskit.xpeedstudio.com/gallery/">Gallery</a>
-- <a href="https://elementskit.xpeedstudio.com/image-comparision">Image Comparison</a>
-- <a href="https://elementskit.xpeedstudio.com/call-to-action/">Call to action</a>
-- <a href="https://elementskit.xpeedstudio.com/video/">Video</a>
-- <a href="https://elementskit.xpeedstudio.com/button/">Button</a>
-- <a href="https://elementskit.xpeedstudio.com/contact/">Contact form 7 Contact form</a>
+- <a href="https://products.wpmet.com/elementskit/accordion/">Accordion</a>
+- <a href="https://products.wpmet.com/elementskit/tab/">Tab</a>
+- <a href="https://products.wpmet.com/elementskit/team/">Team</a>
+- <a href="https://products.wpmet.com/elementskit/social-media/">Social Media</a>
+- <a href="https://products.wpmet.com/elementskit/blog/">Recent Blog</a>
+- <a href="https://products.wpmet.com/elementskit/client-logo/">Client and sponsor logo</a>
+- <a href="https://products.wpmet.com/elementskit/countdown-timer/">Countdown Timer</a>
+- <a href="https://products.wpmet.com/elementskit/faq/">FAQ</a>
+- <a href="https://products.wpmet.com/elementskit/funfact/">FunFact</a>
+- <a href="https://products.wpmet.com/elementskit/heading/">Heading</a>
+- <a href="https://products.wpmet.com/elementskit/icon-box/">Icon box</a>
+- <a href="https://products.wpmet.com/elementskit/image-accordion/">Image Accordions</a>
+- <a href="https://products.wpmet.com/elementskit/image-box/">Image Box</a>
+- <a href="https://products.wpmet.com/elementskit/pie-chart/">Piechart</a>
+- <a href="https://products.wpmet.com/elementskit/pricing-new/">Pricing</a>
+- <a href="https://products.wpmet.com/elementskit/progress-bar/">Progress bar</a>
+- <a href="https://products.wpmet.com/elementskit/testimonial/">Testimonial</a>
+- <a href="https://products.wpmet.com/elementskit/mail-chimp/">MailChimp</a>
+- <a href="https://products.wpmet.com/elementskit/gallery/">Gallery</a>
+- <a href="https://products.wpmet.com/elementskit/image-comparision">Image Comparison</a>
+- <a href="https://products.wpmet.com/elementskit/call-to-action/">Call to action</a>
+- <a href="https://products.wpmet.com/elementskit/video/">Video</a>
+- <a href="https://products.wpmet.com/elementskit/button/">Button</a>
+- <a href="https://products.wpmet.com/elementskit/contact/">Contact form 7 Contact form</a>
 - <a href="#.">Drop Caps</a>
 - <a href="#.">Dual Button</a>
 - <a href="#.">Business Hours</a>
@@ -86,13 +86,13 @@ With Elementskit we have Layout library features where over 7+ ready-made home a
 
 == Exclusive PRO Addons widgets ==
 
-- <a href="https://elementskit.xpeedstudio.com/advaced-accordion/">Advanced Accordion (PRO)</a>
-- <a href="https://elementskit.xpeedstudio.com/advance-tab/">Advanced Tab(PRO)</a>
-- <a href="https://elementskit.xpeedstudio.com/time-line/">Timeline (Pro)</a>
-- <a href="https://elementskit.xpeedstudio.com/instagram/">Instagram feed (PRO)</a>
-- <a href="https://elementskit.xpeedstudio.com/facebook-feed/">Facebook feed (PRO)</a>
-- <a href="https://elementskit.xpeedstudio.com/twitter/">Twitter feed (PRO)</a>
-- <a href="https://elementskit.xpeedstudio.com/chart/"><Advanced Chart (PRO)</a>
+- <a href="https://products.wpmet.com/elementskit/advaced-accordion/">Advanced Accordion (PRO)</a>
+- <a href="https://products.wpmet.com/elementskit/advance-tab/">Advanced Tab(PRO)</a>
+- <a href="https://products.wpmet.com/elementskit/time-line/">Timeline (Pro)</a>
+- <a href="https://products.wpmet.com/elementskit/instagram/">Instagram feed (PRO)</a>
+- <a href="https://products.wpmet.com/elementskit/facebook-feed/">Facebook feed (PRO)</a>
+- <a href="https://products.wpmet.com/elementskit/twitter/">Twitter feed (PRO)</a>
+- <a href="https://products.wpmet.com/elementskit/chart/">Advanced Chart (PRO)</a>
 - <a href="#.">Creative button (PRO)</a>
 - <a href="#.">Motion text (PRO)</a>
 
@@ -113,6 +113,15 @@ With Elementskit we have Layout library features where over 7+ ready-made home a
 
 
 == Changelog ==
+
+V1.2.6
+Missing ajax-loader.gif
+Accorion active tab issue
+New controls to page list, post-list widgets
+Controls aren’t working on icon box, image box
+Off canvas hide issue in nav-menu widget (mobile view)
+CSS improvement
+Admin icon missing
 
 
 v1.2.5

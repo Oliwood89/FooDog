@@ -99,7 +99,7 @@ class Handler{
         }
 
         wp_register_style( 'fontawesome', \ElementsKit::widget_url() . 'init/assets/css/font-awesome.min.css', \ElementsKit::VERSION );
-        wp_register_style( 'elementskit-font-css-admin', \ElementsKit::widget_url() . 'init/assets/css/ekiticons.css', \ElementsKit::VERSION );
+        wp_register_style( 'elementskit-font-css-admin', \ElementsKit::widget_url() . 'init/assets/css/admin-ekiticon.css', \ElementsKit::VERSION );
         wp_register_style( 'elementskit-lib-css-admin', \ElementsKit::lib_url() . 'framework/assets/css/framework.css', \ElementsKit::VERSION );
         wp_register_style( 'elementskit-init-css-admin', \ElementsKit::lib_url() . 'framework/assets/css/admin-style.css', \ElementsKit::VERSION );
         wp_register_style( 'elementskit-init-css-ems-admin', \ElementsKit::lib_url() . 'framework/assets/css/admin-style-ems-dev.css', \ElementsKit::VERSION );

@@ -5,8 +5,8 @@ defined( 'ABSPATH' ) || exit;
  * Plugin Name: ElementsKit Lite
  * Description: The most advanced addons for Elementor with tons of widgets, Header builder, Footer builder, Mega menu builder, layout pack and powerful custom controls.
  * Plugin URI: https://wpmet.com/
- * Author: wpmet
- * Version: 1.2.5
+ * Author: Wpmet
+ * Version: 1.2.6
  * Author URI: https://products.wpmet.com/elementskit
  *
  * Text Domain: elementskit
@@ -20,8 +20,6 @@ defined( 'ABSPATH' ) || exit;
  * It has a tons of widgets to create any sites with an ease. It has some most unique 
  * and powerful custom controls for elementor, such as "image picker", "ajax select", "widget area".
  *
- * License description goes here.
- * ##readhere
  */
 
 register_activation_hook(__FILE__, function(){

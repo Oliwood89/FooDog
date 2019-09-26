@@ -616,27 +616,24 @@ class Elementskit_Widget_Icon_Box extends Widget_Base {
                 ]
             ]
         );
+
         $this->add_responsive_control(
             'ekit_icon_box_icon_space',
             [
                 'label' => esc_html__( 'Spacing', 'elementskit' ),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => -20,
-                        'max' => 100,
-                    ],
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-infobox .elementskit-box-header .elementskit-info-box-icon' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'default' => [
-                    'size' => 15,
+                    'top' => '0',
+                    'right' => '15',
+                    'bottom' => '15',
+                    'left' => '15',
                     'unit' => 'px',
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementskit-infobox.icon-top-align .elementskit-box-header .elementskit-info-box-icon' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .elementskit-infobox.text-left.icon-lef-right-aligin .elementskit-box-header .elementskit-info-box-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
-                    '{{WRAPPER}} .elementskit-infobox.text-right.icon-lef-right-aligin .elementskit-box-header .elementskit-info-box-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
-                ],
-
+                    'isLinked' => 'true',
+                ]
             ]
         );
 
@@ -644,19 +641,14 @@ class Elementskit_Widget_Icon_Box extends Widget_Base {
             'ekit_icon_icon_padding',
             [
                 'label' => esc_html__( 'Padding', 'elementskit' ),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-infobox .elementskit-info-box-icon' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'default' => [
                     'size' => 15,
                     'unit' => 'px',
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementskit-infobox .elementskit-info-box-icon' => 'padding: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -774,20 +766,15 @@ class Elementskit_Widget_Icon_Box extends Widget_Base {
         $this->add_responsive_control(
             'ekit_icon_title_bottom_space',
             [
-                'label' => esc_html__( 'Spacing', 'elementskit' ),
-                'type' => Controls_Manager::SLIDER,
-                'range' => [
-                    'px' => [
-                        'min' => 0,
-                        'max' => 100,
-                    ],
+                'label' => esc_html__( 'Margin', 'elementskit' ),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => [ 'px', '%', 'em' ],
+                'selectors' => [
+                    '{{WRAPPER}} .elementskit-infobox .elementskit-info-box-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
                 'default'=>[
                     'unit' => 'px',
                     'size' => '20',
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .elementskit-infobox .elementskit-info-box-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );

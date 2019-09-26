@@ -65,9 +65,10 @@ jQuery(document).ready(function ($) {
 	// hash menu click to hide menu sidebar
 	elementskit_event_manager('click', '.elementskit-navbar-nav > li > a', function(e){
 		var self = $(this),
-			hasHash = $(this).attr('href').indexOf('#');
+			hasHash = $(this).attr('href').indexOf('#'),
+			enable = self.parents('#ekit-megamenu-main-menu').hasClass('ekit-nav-menu-one-page-yes');
 
-			if(hasHash !== -1){
+			if(hasHash !== -1 && enable){
 				e.preventDefault();
 				$('.elementskit-menu-close').trigger('click');
 			}
